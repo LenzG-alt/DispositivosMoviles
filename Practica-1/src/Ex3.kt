@@ -10,6 +10,7 @@ disponible. Imprimir resultados.
 // Creation Date: 23/08/2025
 // Last Modification Date: 23/08/2025
 
+// Muestra el menú de opciones de la calculadora
 fun menuInfo(){
     val menuOpc =
         """
@@ -25,9 +26,11 @@ fun menuInfo(){
     print("   Digite su opcion >>> ")
 }
 
+// Operaciones básicas definidas como funciones simples
 fun suma(num1: Int, num2:Int) = num1 + num2
 fun resta(num1: Int, num2:Int) = num1 - num2
 fun mult(num1: Int, num2:Int) = num1 * num2
+// Manejo especial para división: evita división por cero
 fun division(num1: Int, num2:Int): Float{
     if(num2==0){
         println("ERROR!# - El denominador tiene que ser diferente de 0")
@@ -37,17 +40,21 @@ fun division(num1: Int, num2:Int): Float{
     return num1.toFloat() / num2.toFloat()
 }
 
+// Ejecuta la operación según la opción elegida
+// Retorna true si debe continuar, false si se elige salir
 fun calculadora(opcion: Int): Boolean{
     var num1:Int
     var num2:Int
 
     if (opcion == 0){
         println("  + Saliendo....")
-        return false }
+        return false // Finaliza el bucle principal
+        }
 
     if (opcion>4){
         println("ERROR! Opcion Fuera de Rango...")
-        return true}
+        return true // Continúa pidiendo opción
+        }
 
     print("  + Ingrese el primer número... : ")
     num1 = readln().toInt()
@@ -62,7 +69,7 @@ fun calculadora(opcion: Int): Boolean{
         4 -> print("$num1 / $num2 = ${division(num1, num2)} ")
     }
     println("\n")
-    return true
+    return true // Continuar en el bucle
 }
 
 fun main(){
@@ -70,6 +77,6 @@ fun main(){
     do {
         menuInfo()
         opcion = readln().toInt()
-    } while( calculadora(opcion) )
+    } while( calculadora(opcion) ) // Repite mientras no se elija salir
 
 }

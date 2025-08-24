@@ -10,7 +10,10 @@ Aceptable, Cantidad de Dinero Recibido $8000.
 // Creation Date: 22/08/2025
 // Last Modification Date: 23/08/2025
 
+// Calcula la bonificación basada en el salario y la puntuación (escala de 0 a 10)
 fun calcDinero(sal: Float, punt: Int) = sal * (punt.toFloat()/10)
+
+// Determina el nivel de rendimiento según la puntuación
 fun calcRendimineto(punt: Int): String {
     var rend: String
 
@@ -22,6 +25,9 @@ fun calcRendimineto(punt: Int): String {
     }
     return rend
 }
+
+// Valida que la puntuación esté entre 0 y 10, y que el salario no sea negativo
+// Retorna true si hay error (para repetir el ingreso)
 fun verificacion(puntuacion: Int, salario: Float): Boolean {
     if (puntuacion > 10 || puntuacion<0){
         println("puntuacion $puntuacion fuera de rango....")
@@ -30,16 +36,17 @@ fun verificacion(puntuacion: Int, salario: Float): Boolean {
         println("el monto del salario es negativo: $salario")
     }
     else{
-        return false
+        return false // Datos válidos
     }
     println("Vuelva a ingresar los datos....")
-    return true
+    return true // Datos inválidos, repetir entrada
 
 }
 fun main(){
     var puntuacion: Int
     var salario: Float
 
+    // Bucle que se repite hasta que los datos ingresados sean válidos
     do {
         println("Ingrese la puntuación entre [ 0 - 10 ] : ")
         puntuacion = readln().toInt()
