@@ -19,14 +19,14 @@ Crear instancias de las subclases y ejecutar las operaciones de préstamo y devo
 
  */
 
-// Clase abstracta base para representar un material en la biblioteca
+
 abstract class Material(titulo: String, autor: String, anioPublicacion: String) {
     // Propiedades del material
     var titulo: String = ""
     var autor: String = ""
     var anioPublicacion: String = ""
 
-    // Inicializador para asignar los valores recibidos a las propiedades
+    // Inicializador para asignar los valores
     init {
         this.titulo = titulo
         this.autor = autor
@@ -40,7 +40,7 @@ abstract class Material(titulo: String, autor: String, anioPublicacion: String) 
         println("   + año de publicacion: $anioPublicacion")
     }
 
-    // Método abstracto que se debe implementar en las subclases
+    // Metodo abstracto
     abstract fun mostrarDetalles()
 }
 
@@ -53,13 +53,13 @@ class Libro(
     var numeroPaginas: Int
 ) : Material(titulo, autor, anioPublicacion) {
 
-    // Método específico para mostrar los detalles de un libro
+    // Metodo específico para mostrar los detalles de un libro
     fun detallesLibro() {
         println("   + genero : $genero")
         println("   + numero de paginas: $numeroPaginas \n")
     }
 
-    // Implementación del método abstracto de Material
+    // Implementación del metodo abstracto de Material
     override fun mostrarDetalles() {
         mostrarInfo()
         detallesLibro()
