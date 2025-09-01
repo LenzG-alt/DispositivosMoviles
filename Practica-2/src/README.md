@@ -104,8 +104,9 @@ I- mplementaciones para `Cuadrado`, `Rectángulo` y `Círculo`.
 - Uso de PI de kotlin.math.
 
 ### Clases
+
 | Figura | Area | Perimetro |
-|-------|-------------|
+|-------|-------------|-------|
 | Cuadrado(lado) | lado² | 4 × lado |
 | Rectangulo(base, altura) | base × altura | 2×(base + altura) |
 | Circulo(radio) | π × radio² | 2 × π × radio |
