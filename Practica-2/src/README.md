@@ -189,15 +189,7 @@ kotlinc *.kt -include-runtime -d biblioteca.jar
 java -jar biblioteca.jar
 ```
 
-### 2. Usar kotlin directamente (si está en PATH)
-- kotlin CuentaBancaria.kt
-- kotlin Producto.kt
-- kotlin Figura.kt
-- kotlin Biblioteca.kt
-  
-**⚠️ Solo un main() puede ejecutarse a la vez. Comenta los otros main si corres todo en un solo archivo.**
-
-### 3. Usar un IDE
+### 2. Usar un IDE
 ```bash
 Abre el proyecto en IntelliJ IDEA o Android Studio.
 Ejecuta cualquiera de los bloques main() haciendo clic en ▶️.
