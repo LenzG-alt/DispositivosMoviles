@@ -1,3 +1,4 @@
+# 📚 Practica 2 : Programación Orientada a Objetos Kotlin
 Este proyecto está desarrollado en **Kotlin** y muestra el uso avanzado de conceptos de **Programación Orientada a Objetos (POO)** como:
 
 - Clases y objetos
@@ -106,15 +107,11 @@ Implementaciones para Cuadrado, Rectángulo y Círculo.
 Uso de PI de kotlin.math.
 
 ### Clases
-Cuadrado(lado)
-lado²
-4 × lado
-Rectangulo(base, altura)
-base × altura
-2×(base + altura)
-Circulo(radio)
-π × radio²
-2 × π × radio
+| Figura | Area | Perimetro |
+|-------|-------------|
+| Cuadrado(lado) | lado² | 4 × lado |
+| Rectangulo(base, altura) | base × altura | 2×(base + altura) |
+| Circulo(radio) | π × radio² | 2 × π × radio |
 
 ### Ejemplo de uso
 ```bash
@@ -124,57 +121,46 @@ cuadrado.mostrarInfo()
 // ========= CUADRADO =========
 // El area total es: 16.0
 // Perimetro total es: 16.0
-4. 🏛️ Sistema de Biblioteca
 ```
+## 4. 🏛️ Sistema de Biblioteca
 
 ### Descripción
 Un sistema completo de gestión de biblioteca que permite registrar usuarios, materiales, realizar préstamos y devoluciones.
 
 ### Características
-Herencia con clase abstracta Material.
-Polimorfismo en Libro y Revista.
-Uso de data class para Usuario.
-Interfaz iBiblioteca para definir contratos.
-Colecciones: List, MutableMap.
+- Herencia con clase abstracta Material.
+- Polimorfismo en Libro y Revista.
+- Uso de data class para Usuario.
+- Interfaz iBiblioteca para definir contratos.
+- Colecciones: List, MutableMap.
 
 ### Estructura de Clases
 
-🔹 Material (abstracta)
-Clase base para todos los materiales bibliográficos.
+#### 🔹 Material (abstracta): Clase base para todos los materiales bibliográficos.
 
-🔹 Libro
-Extiende Material con propiedades:
-
-genero: String
-numeroPaginas: Int
-🔹 Revista
-Extiende Material con propiedades:
-
-issn: Int
-volumen, numero, editorial
-🔹 Usuario
-data class que representa a un usuario con:
-
-nombre, apellido, edad
-🔹 Biblioteca (implementa iBiblioteca)
-Gestiona:
-
-Materiales disponibles
-Usuarios registrados
-Préstamos activos (con mapa usuario → lista de materiales)
-Métodos de la Interfaz iBiblioteca
-registrarMaterial()
-Agrega un libro o revista al catálogo
-registrarUsuario()
-Registra un nuevo usuario
-realizarPrestamo()
-Presta un material a un usuario registrado
-procesarDevolucion()
-Devuelve un material y lo vuelve disponible
-materialDisponible()
-Muestra todos los materiales disponibles
-materialReservado(usuario)
-Muestra los materiales prestados a un usuario
+#### 🔹 Libro: Extiende Material con propiedades:
+  - genero: String
+  - numeroPaginas: Int
+    
+#### 🔹 Revista: Extiende Material con propiedades:
+  - issn: Int
+  - volumen, numero, editorial
+  - 
+#### 🔹 Usuario: data class que representa a un usuario con:
+  - nombre, apellido, edad
+    
+#### 🔹 Biblioteca (implementa iBiblioteca)
+**Gestiona:**
+- Materiales disponibles
+- Usuarios registrados
+- Préstamos activos (con mapa usuario → lista de materiales)
+- Métodos de la Interfaz iBiblioteca
+**registrarMaterial()**: Agrega un libro o revista al catálogo
+**registrarUsuario()**: Registra un nuevo usuario
+**realizarPrestamo()**: Presta un material a un usuario registrado
+**procesarDevolucion()**: Devuelve un material y lo vuelve disponible
+**materialDisponible()**: Muestra todos los materiales disponibles
+**materialReservado(usuario)**: Muestra los materiales prestados a un usuario
 
 ### Ejemplo de uso
 ```bash
@@ -194,7 +180,7 @@ biblioteca.procesarDevolucion(usuario, libro)
 - Kotlin instalado (versión 1.8+)
 - JVM (Java 8 o superior)
 - Opciones de Ejecución
-- 
+  
 ### 1. Desde terminal (Kotlin REPL o compilación)
 **Compilar**
 ```bash
