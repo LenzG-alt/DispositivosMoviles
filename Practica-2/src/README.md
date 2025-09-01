@@ -1,5 +1,5 @@
 # 📚 Practica 2 : Programación Orientada a Objetos Kotlin
-Este proyecto está desarrollado en **Kotlin** y muestra el uso avanzado de conceptos de **Programación Orientada a Objetos (POO)** como:
+Este proyecto está desarrollado en **Kotlin** y muestra el uso de **Programación Orientada a Objetos (POO)** como:
 
 - Clases y objetos
 - Propiedades con validaciones
@@ -8,9 +8,8 @@ Este proyecto está desarrollado en **Kotlin** y muestra el uso avanzado de conc
 - Constructores secundarios
 - Data classes
 - Uso de colecciones (listas y mapas)
-- Encapsulamiento y lógica de negocio
+- Encapsulamiento
 
-Ideal para estudiantes o desarrolladores que desean entender cómo estructurar un sistema modular y escalable en Kotlin.
 
 ---
 
@@ -22,8 +21,6 @@ Ideal para estudiantes o desarrolladores que desean entender cómo estructurar u
 ---
 
 ## 📂 Estructura del Proyecto
-
-El proyecto contiene los siguientes módulos:
 
 | Módulo | Descripción |
 |-------|-------------|
@@ -70,9 +67,9 @@ cuenta.retirar(600.0)     // Error: excede límite
 Representa un producto con precio y descuento, permitiendo calcular el precio final tras aplicar el descuento.
 
 ### Características
-Validación de precio positivo y descuento no negativo.
-Soporte para nombre opcional mediante constructor secundario.
-Cálculo automático del precio con descuento.
+- Validación de precio positivo y descuento no negativo.
+- Soporte para nombre opcional mediante constructor secundario.
+- Cálculo automático del precio con descuento.
 
 ### Clase Principal
 ```bash
@@ -102,9 +99,9 @@ manzana.mostrarInfo()
 Sistema basado en herencia y clases abstractas para calcular el área y perímetro de figuras.
 
 ### Características
-Clase base abstracta Figura con métodos obligatorios.
-Implementaciones para Cuadrado, Rectángulo y Círculo.
-Uso de PI de kotlin.math.
+- Clase base abstracta Figura con métodos obligatorios.
+I- mplementaciones para `Cuadrado`, `Rectángulo` y `Círculo`.
+- Uso de PI de kotlin.math.
 
 ### Clases
 | Figura | Area | Perimetro |
@@ -125,13 +122,13 @@ cuadrado.mostrarInfo()
 ## 4. 🏛️ Sistema de Biblioteca
 
 ### Descripción
-Un sistema completo de gestión de biblioteca que permite registrar usuarios, materiales, realizar préstamos y devoluciones.
+Un sistema de gestión de biblioteca que permite registrar usuarios, materiales, realizar préstamos y devoluciones.
 
 ### Características
 - Herencia con clase abstracta Material.
 - Polimorfismo en Libro y Revista.
 - Uso de data class para Usuario.
-- Interfaz iBiblioteca para definir contratos.
+- Interfaz iBiblioteca para definir metodos.
 - Colecciones: List, MutableMap.
 
 ### Estructura de Clases
