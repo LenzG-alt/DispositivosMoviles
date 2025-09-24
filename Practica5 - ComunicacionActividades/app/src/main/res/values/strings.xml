@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Practica4_ComunicacionActividades</string>
+    <string name="Nombre">Nombre</string>
+    <string name="txtEdad">"Edad: "</string>
+    <string name="txtCiudad">"Ciudad: "</string>
+    <string name="txtEmail">"Email: "</string>
+
+
+    <!-- Formulario -->
+    <string name="titulo">Ingresa tu perfil</string>
+    <string name="nombre">Nombre completo</string>
+    <string name="edad">Edad</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="email">Correo electrónico</string>
+    <string name="btnContinuar">Continuar</string>
+
+    <!-- Resumen -->
+    <string name="titulo_Resumen">Resumen del Perfil</string>
+    <string name="btnConfirmar">Confirmar</string>
+    <string name="btnVolverEditar">Volver a editar</string>
+    <string name="msg_EditorTexto">Escribe tu nota rápida aquí...</string>
+    <string name="btnCompartir">Compartir</string>
+    <string name="msg_CompartirCorreo">Compartir por correo</string>
+    <string name="msg_EditarNuevo">Editar de nuevo</string>
+    <string name="btnEjercicio">Elegir otro ejercicio</string>
+
+
+</resources>
+
