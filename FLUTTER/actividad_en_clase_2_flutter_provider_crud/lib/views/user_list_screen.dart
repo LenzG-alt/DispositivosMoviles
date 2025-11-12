@@ -12,15 +12,36 @@ class UserListScreen extends StatelessWidget {
     final viewModel = context.watch<UserViewModel>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista de Usuarios')),
-      body: ListView.builder(
+      appBar: AppBar(title: const Text('Lista de Usuarios'),
+        actions: [
+          Row(
+            children: [
+              const Text('Activos'),
+              Switch(
+                value: viewModel.mostrarSoloActivos,
+                onChanged: (value) => viewModel.filtroActivos(value),
+                ),
+              ],
+            ),
+          ],
+        ),
+
+
+      body: viewModel.usuarios.isEmpty?
+        const Center(child: Text('No hay usuarios'))
+          : ListView.builder(
         itemCount: viewModel.usuarios.length,
         itemBuilder: (context, index) {
           final user = viewModel.usuarios[index];
           return Card(
+            margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: ListTile(
-              title: Text(user.nombre),
-              subtitle: Text('${user.genero} - ${user.activo ? 'Activo' : 'Inactivo'}'),
+              title: Text(user.nombre,
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              subtitle: Text(
+                '${user.genero} - Edad: ${user.edad}\nCorreo: ${user.correo}\n${user.activo ? 'Activo' : 'Inactivo'}',
+              ),
+
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
