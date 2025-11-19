@@ -72,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 24),
 
+              // BOTÓN LOGIN
               ElevatedButton(
                 onPressed: () {
                   // Validar
@@ -82,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => UserListScreen(),
+                        builder: (_) => UserListScreen(email: _email),
                       ),
                     );
                   }

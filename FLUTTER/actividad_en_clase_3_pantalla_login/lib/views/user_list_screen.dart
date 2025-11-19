@@ -5,14 +5,17 @@ import '../models/user.dart';
 import 'user_form_screen.dart';
 
 class UserListScreen extends StatelessWidget {
-  const UserListScreen({super.key});
+  final String email;
+
+  const UserListScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
     final viewModel = context.watch<UserViewModel>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista de Usuarios'),
+      appBar: AppBar(
+        title: Text('Bienvenido: $email'),
         actions: [
           Row(
             children: [
@@ -20,15 +23,14 @@ class UserListScreen extends StatelessWidget {
               Switch(
                 value: viewModel.mostrarSoloActivos,
                 onChanged: (value) => viewModel.filtroActivos(value),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
+      ),
 
-
-      body: viewModel.usuarios.isEmpty?
-        const Center(child: Text('No hay usuarios'))
+      body: viewModel.usuarios.isEmpty
+          ? const Center(child: Text('No hay usuarios'))
           : ListView.builder(
         itemCount: viewModel.usuarios.length,
         itemBuilder: (context, index) {
@@ -36,15 +38,20 @@ class UserListScreen extends StatelessWidget {
           return Card(
             margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: ListTile(
-              title: Text(user.nombre,
-                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              title: Text(
+                user.nombre,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
               subtitle: Text(
-                '${user.genero} - Edad: ${user.edad}\nCorreo: ${user.correo}\n${user.activo ? 'Activo' : 'Inactivo'}',
+                '${user.genero} - Edad: ${user.edad}\n'
+                    'Correo: ${user.correo}\n'
+                    '${user.activo ? 'Activo' : 'Inactivo'}',
               ),
 
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  // EDITAR
                   IconButton(
                     icon: const Icon(Icons.edit),
                     onPressed: () async {
@@ -62,6 +69,8 @@ class UserListScreen extends StatelessWidget {
                       }
                     },
                   ),
+
+                  // ELIMINAR
                   IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
                     onPressed: () => viewModel.eliminarUsuario(index),
@@ -72,6 +81,7 @@ class UserListScreen extends StatelessWidget {
           );
         },
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final nuevoUsuario = await Navigator.push(
