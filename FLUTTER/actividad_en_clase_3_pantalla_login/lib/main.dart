@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/user_view_model.dart';
 import 'views/user_list_screen.dart';
+import 'views/login_screen.dart';
 
 void main() {
   runApp(
@@ -18,9 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gestión de Usuarios',
-      theme: ThemeData(primarySwatch: Colors.indigo),
-      home: const UserListScreen(),
+      debugShowCheckedModeBanner: false,
+      home: const LoginScreen(),
     );
   }
 }
