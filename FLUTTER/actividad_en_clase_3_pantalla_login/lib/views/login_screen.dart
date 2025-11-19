@@ -90,6 +90,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: const Text('Ingresar'),
               ),
+
+              const SizedBox(height: 15),
+
+              // ¿OLVIDASTE TU CONTRASEÑA?
+              Center(
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text('¿Olvidaste tu contraseña?'),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // CREAR CUENTA
+              Center(
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: const Text('Crear cuenta'),
+                ),
+              ),
             ],
           ),
         ),
